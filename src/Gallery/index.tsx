@@ -2,6 +2,9 @@ import { Photo } from "./types";
 import React, { useState } from 'react';
 
 import style from './index.module.scss';
+import { MainPhoto } from "./MainFoto";
+import { PreviewGallery } from "./PreviewGallery";
+import { Navigation } from "./Navigation";
 
 interface WebGalleryProps {
     photos: Photo[],
@@ -22,9 +25,9 @@ export const WebGallery: React.FC<WebGalleryProps> = ({
             <div className={style.GalleryContainer}>
                 <MainPhoto
                     prevPhoto={prevPhoto}
-                    currentPhoto={currentPhoto}
+                    activePhoto={activePhoto}
                     nextPhoto={nextPhoto}
-                    className={style.GalleryMainPhoto}
+
                 />
 
                 <Navigation
@@ -46,5 +49,5 @@ export const WebGallery: React.FC<WebGalleryProps> = ({
                 className={style.GalleryPreviewList}
             />
         </div>
-    )
+    );
 }
